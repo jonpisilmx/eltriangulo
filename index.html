@@ -212,7 +212,7 @@
         .output-block { background: #ffffff; border-left: 3px solid var(--accent-black); padding: 1.25rem; margin-bottom: 1rem; font-size: 0.92rem; line-height: 1.6; }
         .output-block label { display: block; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem; }
 
-        /* PINTEREST HUB (ESTILIZADO Y SEGURO) */
+        /* PINTEREST HUB DINÁMICO */
         .pinterest-section {
             background-color: #ffffff;
             border: 1px solid var(--border-line);
@@ -262,6 +262,70 @@
             opacity: 0.95;
             transform: translateY(-2px);
         }
+
+        .btn-refresh-term {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-line);
+            color: var(--text-main);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-refresh-term:hover {
+            background-color: var(--accent-black);
+            color: var(--white);
+        }
+
+        /* BUYER PERSONA & AUDIENCIA */
+        .persona-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+        .persona-block { border-top: 2px solid var(--text-main); padding-top: 1.5rem; }
+        .persona-block h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: -0.5px; }
+        .persona-block p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .persona-block ul { list-style: none; }
+        .persona-block ul li { font-size: 0.88rem; padding: 0.45rem 0; border-bottom: 1px dashed var(--border-line); display: flex; align-items: center; gap: 0.5rem; }
+        .persona-block ul li::before { content: "—"; color: var(--accent-gold); font-weight: bold; }
+
+        /* MANUAL 3 PILARES */
+        .manual-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .pillar-card { background: #ffffff; border: 1px solid var(--border-line); border-radius: 6px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+        .pillar-header { border-bottom: 1px solid var(--border-line); padding-bottom: 1rem; margin-bottom: 1rem; }
+        .pillar-num { font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; }
+        .pillar-title { font-size: 1.5rem; font-weight: 800; margin-top: 0.25rem; }
+        .pillar-body { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+        .pillar-footer { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-main); background-color: var(--bg-canvas); padding: 0.5rem 0.75rem; border-radius: 4px; display: inline-block; }
+
+        .evolution-banner {
+            margin-top: 3rem;
+            background-color: var(--accent-black);
+            color: #ffffff;
+            border-radius: 6px;
+            padding: 3.5rem;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .evolution-banner h3 { font-size: 2.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.5px; }
+        .evolution-banner p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+        .evolution-btn { display: inline-block; margin-top: 1.5rem; background-color: #ffffff; color: var(--accent-black); padding: 0.8rem 1.75rem; border-radius: 50px; font-weight: 700; font-size: 0.82rem; text-decoration: none; text-transform: uppercase; }
+
+        /* MIX GRID ANUAL */
+        .mix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .mix-card { background: var(--white); border: 1px solid var(--border-line); border-radius: 6px; padding: 1.75rem; }
+        .mix-percentage { font-size: 2rem; font-weight: 800; color: var(--card-yellow); margin-bottom: 0.5rem; }
+        .mix-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .mix-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* SPECS GRID */
+        .specs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .spec-box { background-color: #ffffff; border: 1px solid var(--border-line); padding: 1.5rem; border-radius: 6px; }
+        .spec-number { font-size: 1.8rem; font-weight: 800; color: var(--text-main); line-height: 1; margin-bottom: 0.5rem; }
+        .spec-label { font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); }
+        .spec-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; }
 
         footer { padding: 2rem 3rem; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); background-color: var(--bg-card); }
 
@@ -341,25 +405,189 @@
                 </div>
             </div>
 
-            <!-- ZONA DE INSPIRACIÓN VISUAL EN PINTEREST -->
+            <!-- ZONA DE INSPIRACIÓN VISUAL EN PINTEREST DINÁMICA -->
             <div class="pinterest-section" id="pinterest">
                 <div class="pinterest-header">
                     <div>
-                        <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--text-muted); letter-spacing:1px;">Hub de Diseño Visual</span>
-                        <h3 style="font-size:1.3rem; font-weight:800; margin-top:0.2rem;">Referencias de Diseño en Pinterest</h3>
+                        <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--text-muted); letter-spacing:1px;">Hub de Diseño Visual Dinámico</span>
+                        <h3 style="font-size:1.3rem; font-weight:800; margin-top:0.2rem;">Referencias de Diseño para El Triángulo</h3>
                     </div>
+                    <button class="btn-refresh-term" onclick="rotatePinterestQuery()">
+                        <span>🎲 Cambiar Ángulo Visual</span>
+                    </button>
                 </div>
 
                 <div class="pinterest-grid-box">
-                    <p style="font-size:0.95rem; font-weight:700; margin-bottom:0.5rem; color:var(--text-main);">
-                        Búsqueda activa: "instagram post design yoga nature retreat"
+                    <p style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--accent-gold); letter-spacing:1px; margin-bottom:0.25rem;">Eje Fijo + Ángulo Variado</p>
+                    <p style="font-size:1.1rem; font-weight:800; margin-bottom:0.5rem; color:var(--text-main);" id="currentSearchLabel">
+                        "instagram post design yoga nature retreat"
                     </p>
-                    <p style="font-size:0.85rem; color:var(--text-muted); max-width:520px; margin-bottom:1.5rem;">
-                        Explora la galería oficial de ideas de maquetación, paletas de color y diseño editorial para los posts de El Triángulo directamente en Pinterest.
+                    <p style="font-size:0.85rem; color:var(--text-muted); max-width:560px; margin-bottom:1.5rem;">
+                        Explora referencias visuales de maquetación, paletas de color, tipografía y estética editorial seleccionadas para el universo visual de El Triángulo en Pinterest.
                     </p>
                     <a id="pinterestBtn" href="https://www.pinterest.com/search/pins/?q=instagram%20post%20design%20yoga%20nature%20retreat" target="_blank" rel="noopener noreferrer" class="btn-pinterest">
-                        <span>📌 Abrir Galería en Pinterest</span>
+                        <span>📌 Explorar Galería en Pinterest</span>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUYER PERSONA & AUDIENCIA -->
+        <section class="section-block" id="audiencia">
+            <div class="section-header">
+                <span class="hero-tag">01 / Definición de Audiencia &amp; Código Semántico</span>
+                <h2 class="section-title">¿A quién le hablamos y cuál es nuestro código?</h2>
+            </div>
+
+            <div class="persona-grid">
+                <div class="persona-block">
+                    <h3>Estilo de Vida del Cliente Ideal</h3>
+                    <p>Profesionales creativos, líderes de proyectos, practicantes de wellness y nómadas digitales (30 a 55 años) saturados del ritmo urbano.</p>
+                    <ul>
+                        <li>Valoran el diseño consciente, la privacidad y la autenticidad.</li>
+                        <li>Buscan espacios que estimulen su creatividad y confronten sus bloqueos.</li>
+                        <li>Entienden el viaje como una inversión en su equilibrio emocional y espiritual.</li>
+                    </ul>
+                </div>
+
+                <div class="persona-block">
+                    <h3>Código Semántico Bilingüe</h3>
+                    <p>Palabras clave que deben articular de forma constante el universo conceptual de las publicaciones y copys en redes sociales.</p>
+                    <ul>
+                        <li><b>RELIEF / ALIVIO:</b> La descompresión inmediata al dejar atrás el ruido del valle.</li>
+                        <li><b>HAVEN / REFUGIO:</b> El hogar seguro en la selva tropical donde ocurre la transformación.</li>
+                        <li><b>INICIADO:</b> El viajero que mira la vida con ojos de búsqueda, revelación y crecimiento.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MANUAL 3 PILARES + EVOLUCIÓN INTEGRAL -->
+        <section class="section-block" id="manual">
+            <div class="section-header">
+                <span class="hero-tag">02 / Estructura del Viaje Narrativo</span>
+                <h2 class="section-title">Mente, Cuerpo y Espíritu</h2>
+            </div>
+
+            <div class="manual-grid">
+                <div class="pillar-card">
+                    <div>
+                        <div class="pillar-header">
+                            <span class="pillar-num">Pilar 01</span>
+                            <h3 class="pillar-title">Mente</h3>
+                        </div>
+                        <p class="pillar-body">
+                            <b>El Detonante del Viaje.</b> La saturación mental de la ciudad exige una pausa. En la cima de la colina, la vista a 180° del Pacífico devuelve la perspectiva clara y reordena las prioridades.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="pillar-footer">Concepto: Claridad &amp; Alivio</span>
+                    </div>
+                </div>
+
+                <div class="pillar-card">
+                    <div>
+                        <div class="pillar-header">
+                            <span class="pillar-num">Pilar 02</span>
+                            <h3 class="pillar-title">Cuerpo</h3>
+                        </div>
+                        <p class="pillar-body">
+                            <b>El Anclaje Físico.</b> El ascenso a pie de 3 a 5 minutos filtra la prisa. La bio-alberca de agua de lluvia, las prácticas en el Yoga Shala y el aire limpio restauran la energía vital.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="pillar-footer">Concepto: Vitalidad &amp; Permacultura</span>
+                    </div>
+                </div>
+
+                <div class="pillar-card">
+                    <div>
+                        <div class="pillar-header">
+                            <span class="pillar-num">Pilar 03</span>
+                            <h3 class="pillar-title">Espíritu</h3>
+                        </div>
+                        <p class="pillar-body">
+                            <b>El Encuentro en el Refugio.</b> La inmersión en la selva, el arte y el estudio subterráneo sirven como canales para confrontar bloqueos y liberar la verdadera voz interior.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="pillar-footer">Concepto: Haven &amp; Expresión</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="evolution-banner">
+                <div>
+                    <span style="text-transform: uppercase; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; color: #f1aa37;">Punto Cúlmine del Viaje</span>
+                    <h3>Evolución Integral del Ser</h3>
+                    <p>
+                        El huésped no deja la montaña como llegó. Al integrar Mente, Cuerpo y Espíritu en El Triángulo, desciende portando la claridad, el alivio y la fuerza descubiertas en este refugio tropical.
+                    </p>
+                </div>
+                <div style="text-align: right;">
+                    <a href="#contacto" class="evolution-btn">Iniciar el Ascenso</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRATEGIA ANUAL: MIX DE CONTENIDOS (40-20-20-20) -->
+        <section class="section-block" id="mix">
+            <div class="section-header">
+                <span class="hero-tag">03 / Distribución Temática Anual</span>
+                <h2 class="section-title">Mix de Contenidos Unificantes (Mínimo 9 Posts/Mes)</h2>
+            </div>
+
+            <div class="mix-grid">
+                <div class="mix-card">
+                    <div class="mix-percentage">40%</div>
+                    <div class="mix-title">Hotel &amp; Infraestructura</div>
+                    <div class="mix-desc">Ubicación en la colina, aislamiento del ruido, vistas al Pacífico y diseño bioclimático por Raúl Fernández y Taller Lu'um.</div>
+                </div>
+                <div class="mix-card">
+                    <div class="mix-percentage">20%</div>
+                    <div class="mix-title">Retiros (Grupos)</div>
+                    <div class="mix-desc">El poder del grupo sanador. El arte y la convivencia en la Palapa como motor de un retiro que estimula la creatividad.</div>
+                </div>
+                <div class="mix-card">
+                    <div class="mix-percentage">20%</div>
+                    <div class="mix-title">Wellness &amp; Espíritu</div>
+                    <div class="mix-desc">Prácticas en el Yoga Shala, bio-alberca natural de agua de lluvia y reconexión profunda con la selva tropical.</div>
+                </div>
+                <div class="mix-card">
+                    <div class="mix-percentage">20%</div>
+                    <div class="mix-title">Música &amp; Estudio</div>
+                    <div class="mix-desc">Estudio subterráneo de grabación con instrumentos recolectados durante 30 años en 3 continentes.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATOS TÉCNICOS Y CAPACIDADES DE LA PROPIEDAD -->
+        <section class="section-block" id="propiedad">
+            <div class="section-header">
+                <span class="hero-tag">04 / Especificaciones Técnicas del Santuario</span>
+                <h2 class="section-title">Infraestructura, Capacidad &amp; Ubicación</h2>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-box">
+                    <div class="spec-number">20</div>
+                    <div class="spec-label">Huéspedes máximo</div>
+                    <div class="spec-detail">6 Suites Villa, 1 Casita individual y 1 Casa Principal de 2.5 habitaciones.</div>
+                </div>
+                <div class="spec-box">
+                    <div class="spec-number">35</div>
+                    <div class="spec-label">Capacidad Taller</div>
+                    <div class="spec-detail">Espacio cómodo en Palapa &amp; Tapanco para meditación, yoga y talleres.</div>
+                </div>
+                <div class="spec-box">
+                    <div class="spec-number">80</div>
+                    <div class="spec-label">Eventos &amp; Comensales</div>
+                    <div class="spec-detail">Cocina comercial adjunta lista para banquetes y retiros grupales.</div>
+                </div>
+                <div class="spec-box">
+                    <div class="spec-number">180°</div>
+                    <div class="spec-label">Vista al Pacífico</div>
+                    <div class="spec-detail">A 7 min de la Calle Principal y 15 min caminando a la playa de Mazunte.</div>
                 </div>
             </div>
         </section>
@@ -371,7 +599,7 @@
         </footer>
     </div>
 
-    <!-- JAVASCRIPT: LÓGICA DE HERO IMAGES RANDOMICAS + GENERADOR DE IDEAS -->
+    <!-- JAVASCRIPT: LÓGICA DE HERO IMAGES RANDOMICAS + GENERADOR DE IDEAS + PINTEREST DINÁMICO -->
     <script>
         const DEFAULT_API_KEY = "AQ.Ab8RN6KafSfCxSTuQp8xLb6xQ2Se-7c70sAobmAR0zfNxIX8eQ";
 
@@ -385,6 +613,32 @@
             const heroCard = document.getElementById('heroCard');
             const randomImg = hotelImages[Math.floor(Math.random() * hotelImages.length)];
             heroCard.style.backgroundImage = `url('${randomImg}')`;
+        }
+
+        // MOTOR DE BÚSQUEDA DINÁMICA PARA PINTEREST (EJE FIJO + VARIACIONES ÁNGULO DEL PROYECTO)
+        const baseQuery = "instagram post design";
+        const angulosProyecto = [
+            "yoga nature retreat",
+            "brutalist architecture hotel",
+            "organic branding aesthetic",
+            "luxury wellness editorial",
+            "earth tones layout",
+            "tropical sanctuary typography",
+            "minimalist retreat branding",
+            "boho luxury architecture",
+            "meditation sanctuary visual design",
+            "eco resort editorial layout"
+        ];
+
+        function rotatePinterestQuery() {
+            const randomAngle = angulosProyecto[Math.floor(Math.random() * angulosProyecto.length)];
+            const fullQuery = `${baseQuery} ${randomAngle}`;
+            
+            document.getElementById('currentSearchLabel').innerText = `"${fullQuery}"`;
+            
+            const encodedQuery = encodeURIComponent(fullQuery);
+            const pinterestLink = document.getElementById('pinterestBtn');
+            pinterestLink.href = `https://www.pinterest.com/search/pins/?q=${encodedQuery}`;
         }
 
         const autoresAnalisis = [
@@ -466,6 +720,7 @@
         window.onload = function() {
             randomizeHeroImage();
             generateLocalCombinatorialIdea();
+            rotatePinterestQuery();
         };
     </script>
 </body>
