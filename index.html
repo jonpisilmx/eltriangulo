@@ -104,7 +104,7 @@
         }
         .capsule:hover { background-color: var(--text-main); color: var(--white); }
 
-        /* HERO CARD (IMAGEN ALEATORIA) */
+        /* HERO CARD */
         .hero-card-wrap {
             border-left: 1px solid var(--border-line);
             padding: 2.5rem;
@@ -212,7 +212,7 @@
         .output-block { background: #ffffff; border-left: 3px solid var(--accent-black); padding: 1.25rem; margin-bottom: 1rem; font-size: 0.92rem; line-height: 1.6; }
         .output-block label { display: block; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem; }
 
-        /* PINTEREST FEED WIDGET */
+        /* PINTEREST HUB (ESTILIZADO Y SEGURO) */
         .pinterest-section {
             background-color: #ffffff;
             border: 1px solid var(--border-line);
@@ -230,37 +230,37 @@
             gap: 1rem;
         }
 
+        .pinterest-grid-box {
+            background-color: var(--bg-canvas);
+            border: 1px solid var(--border-line);
+            border-radius: 6px;
+            padding: 2.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .btn-pinterest {
             background-color: var(--accent-pinterest);
-            color: #ffffff;
-            border: none;
-            padding: 0.75rem 1.75rem;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 1rem 2.25rem;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: opacity 0.2s;
+            gap: 0.6rem;
+            transition: transform 0.2s, opacity 0.2s;
+            box-shadow: 0 4px 12px rgba(230,0,35,0.25);
         }
-        .btn-pinterest:hover { opacity: 0.9; }
-
-        .pinterest-frame-container {
-            width: 100%;
-            height: 520px;
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid var(--border-line);
-            background-color: var(--bg-canvas);
-        }
-
-        .pinterest-frame-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .btn-pinterest:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
         }
 
         footer { padding: 2rem 3rem; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); background-color: var(--bg-card); }
@@ -302,7 +302,7 @@
                 </p>
                 <div class="social-capsules">
                     <a href="#generador" class="capsule">Motor de Ideas</a>
-                    <a href="#pinterest" class="capsule">Pinterest Visuals</a>
+                    <a href="#pinterest" class="capsule">Pinterest Hub</a>
                 </div>
             </div>
             
@@ -341,20 +341,25 @@
                 </div>
             </div>
 
-            <!-- ZONA DE INSPIRACIÓN VISUAL (PINTEREST FEED) -->
+            <!-- ZONA DE INSPIRACIÓN VISUAL EN PINTEREST -->
             <div class="pinterest-section" id="pinterest">
                 <div class="pinterest-header">
                     <div>
-                        <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--text-muted); letter-spacing:1px;">Inspiración Visual en Tiempo Real</span>
-                        <h3 style="font-size:1.3rem; font-weight:800; margin-top:0.2rem;">Pinterest: "instagram post design yoga nature retreat"</h3>
+                        <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--text-muted); letter-spacing:1px;">Hub de Diseño Visual</span>
+                        <h3 style="font-size:1.3rem; font-weight:800; margin-top:0.2rem;">Referencias de Diseño en Pinterest</h3>
                     </div>
-                    <button class="btn-pinterest" onclick="refreshPinterestFeed()">
-                        <span>📌 Actualizar Referencias</span>
-                    </button>
                 </div>
 
-                <div class="pinterest-frame-container">
-                    <iframe id="pinterestIframe" src="https://assets.pinterest.com/ext/embed.html?id=search&term=instagram%20post%20design%20yoga%20nature%20retreat" title="Pinterest Visual Search"></iframe>
+                <div class="pinterest-grid-box">
+                    <p style="font-size:0.95rem; font-weight:700; margin-bottom:0.5rem; color:var(--text-main);">
+                        Búsqueda activa: "instagram post design yoga nature retreat"
+                    </p>
+                    <p style="font-size:0.85rem; color:var(--text-muted); max-width:520px; margin-bottom:1.5rem;">
+                        Explora la galería oficial de ideas de maquetación, paletas de color y diseño editorial para los posts de El Triángulo directamente en Pinterest.
+                    </p>
+                    <a id="pinterestBtn" href="https://www.pinterest.com/search/pins/?q=instagram%20post%20design%20yoga%20nature%20retreat" target="_blank" rel="noopener noreferrer" class="btn-pinterest">
+                        <span>📌 Abrir Galería en Pinterest</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -366,7 +371,7 @@
         </footer>
     </div>
 
-    <!-- JAVASCRIPT: LOGICA DEL GENERADOR Y REFRESH DE PINTEREST -->
+    <!-- JAVASCRIPT: LÓGICA DE HERO IMAGES RANDOMICAS + GENERADOR DE IDEAS -->
     <script>
         const DEFAULT_API_KEY = "AQ.Ab8RN6KafSfCxSTuQp8xLb6xQ2Se-7c70sAobmAR0zfNxIX8eQ";
 
@@ -380,16 +385,6 @@
             const heroCard = document.getElementById('heroCard');
             const randomImg = hotelImages[Math.floor(Math.random() * hotelImages.length)];
             heroCard.style.backgroundImage = `url('${randomImg}')`;
-        }
-
-        // FUNCIÓN PARA ACTUALIZAR RESULTADOS DE PINTEREST
-        function refreshPinterestFeed() {
-            const iframe = document.getElementById('pinterestIframe');
-            // Agregamos un timestamp aleatorio al parámetro para forzar la recarga de nuevas referencias visuales
-            const query = encodeURIComponent("instagram post design yoga nature retreat");
-            const timestamp = new Date().getTime();
-            
-            iframe.src = `https://www.pinterest.com/search/pins/?q=${query}&rs=typed&t=${timestamp}`;
         }
 
         const autoresAnalisis = [
@@ -471,7 +466,6 @@
         window.onload = function() {
             randomizeHeroImage();
             generateLocalCombinatorialIdea();
-            refreshPinterestFeed();
         };
     </script>
 </body>
