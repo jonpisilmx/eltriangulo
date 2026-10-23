@@ -18,6 +18,7 @@
             --border-line: #d2cfc7;
             --accent-black: #000000;
             --accent-gold: #c89d56;
+            --accent-pinterest: #e60023;
             --white: #ffffff;
             --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-hand: 'Caveat', cursive;
@@ -130,7 +131,6 @@
             overflow: hidden;
         }
 
-        /* Overlay para legibilidad del texto */
         .hero-card::before {
             content: '';
             position: absolute;
@@ -140,10 +140,7 @@
             z-index: 1;
         }
 
-        .hero-card > * {
-            position: relative;
-            z-index: 2;
-        }
+        .hero-card > * { position: relative; z-index: 2; }
 
         .card-handwriting { font-family: var(--font-hand); font-size: 3.2rem; color: var(--white); transform: rotate(-4deg); text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         .triangle-sacred-symbol {
@@ -175,46 +172,14 @@
             font-size: 1.1rem;
             transition: all 0.2s;
         }
-        .refresh-img-btn:hover {
-            background: rgba(255,255,255,0.5);
-            transform: rotate(180deg);
-        }
-
-        /* BADGES STRIP */
-        .badges-strip {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            border-bottom: 1px solid var(--border-line);
-            text-align: center;
-            background-color: var(--bg-card);
-        }
-
-        .badge-item {
-            padding: 1.5rem 0.5rem;
-            border-right: 1px solid var(--border-line);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        .badge-item:last-child { border-right: none; }
-
-        .badge-circle {
-            width: 36px; height: 36px;
-            border: 1px solid var(--border-line);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.9rem; background-color: #ffffff;
-        }
-        .badge-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+        .refresh-img-btn:hover { background: rgba(255,255,255,0.5); transform: rotate(180deg); }
 
         /* GENERAL SECTIONS */
         .section-block { padding: 4rem 3rem; border-bottom: 1px solid var(--border-line); }
         .section-header { margin-bottom: 2.5rem; }
         .section-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin-top: 0.5rem; }
 
-        /* GENERADOR DE IDEAS SIMPLIFICADO */
+        /* GENERADOR DE IDEAS */
         .generator-box {
             background-color: #ffffff;
             border: 1px solid var(--border-line);
@@ -247,59 +212,62 @@
         .output-block { background: #ffffff; border-left: 3px solid var(--accent-black); padding: 1.25rem; margin-bottom: 1rem; font-size: 0.92rem; line-height: 1.6; }
         .output-block label { display: block; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem; }
 
-        /* BUYER PERSONA & AUDIENCIA */
-        .persona-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
-        .persona-block { border-top: 2px solid var(--text-main); padding-top: 1.5rem; }
-        .persona-block h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: -0.5px; }
-        .persona-block p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1rem; }
-        .persona-block ul { list-style: none; }
-        .persona-block ul li { font-size: 0.88rem; padding: 0.45rem 0; border-bottom: 1px dashed var(--border-line); display: flex; align-items: center; gap: 0.5rem; }
-        .persona-block ul li::before { content: "—"; color: var(--accent-gold); font-weight: bold; }
-
-        /* MANUAL 3 PILARES */
-        .manual-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .pillar-card { background: #ffffff; border: 1px solid var(--border-line); border-radius: 6px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
-        .pillar-header { border-bottom: 1px solid var(--border-line); padding-bottom: 1rem; margin-bottom: 1rem; }
-        .pillar-num { font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; }
-        .pillar-title { font-size: 1.5rem; font-weight: 800; margin-top: 0.25rem; }
-        .pillar-body { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-        .pillar-footer { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-main); background-color: var(--bg-canvas); padding: 0.5rem 0.75rem; border-radius: 4px; display: inline-block; }
-
-        .evolution-banner {
-            margin-top: 3rem;
-            background-color: var(--accent-black);
-            color: #ffffff;
-            border-radius: 6px;
-            padding: 3.5rem;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
+        /* PINTEREST FEED WIDGET */
+        .pinterest-section {
+            background-color: #ffffff;
+            border: 1px solid var(--border-line);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-top: 2.5rem;
         }
-        .evolution-banner h3 { font-size: 2.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.5px; }
-        .evolution-banner p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
-        .evolution-btn { display: inline-block; margin-top: 1.5rem; background-color: #ffffff; color: var(--accent-black); padding: 0.8rem 1.75rem; border-radius: 50px; font-weight: 700; font-size: 0.82rem; text-decoration: none; text-transform: uppercase; }
 
-        /* MIX GRID ANUAL */
-        .mix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-        .mix-card { background: var(--white); border: 1px solid var(--border-line); border-radius: 6px; padding: 1.75rem; }
-        .mix-percentage { font-size: 2rem; font-weight: 800; color: var(--card-yellow); margin-bottom: 0.5rem; }
-        .mix-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem; }
-        .mix-desc { font-size: 0.85rem; color: var(--text-muted); }
+        .pinterest-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
 
-        /* SPECS GRID */
-        .specs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-        .spec-box { background-color: #ffffff; border: 1px solid var(--border-line); padding: 1.5rem; border-radius: 6px; }
-        .spec-number { font-size: 1.8rem; font-weight: 800; color: var(--text-main); line-height: 1; margin-bottom: 0.5rem; }
-        .spec-label { font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); }
-        .spec-detail { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; }
+        .btn-pinterest {
+            background-color: var(--accent-pinterest);
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.2s;
+        }
+        .btn-pinterest:hover { opacity: 0.9; }
+
+        .pinterest-frame-container {
+            width: 100%;
+            height: 520px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-line);
+            background-color: var(--bg-canvas);
+        }
+
+        .pinterest-frame-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         footer { padding: 2rem 3rem; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); background-color: var(--bg-card); }
 
         @media (max-width: 900px) {
             .hero-section, .persona-grid, .manual-grid, .evolution-banner, .specs-grid { grid-template-columns: 1fr; }
             .hero-card-wrap { border-left: none; border-top: 1px solid var(--border-line); }
-            .badges-strip { grid-template-columns: repeat(3, 1fr); }
             header, .section-block, footer { padding: 2rem 1.5rem; }
         }
     </style>
@@ -317,10 +285,9 @@
             </div>
             <nav>
                 <a href="#generador">Generador</a>
+                <a href="#pinterest">Inspiración Visual</a>
                 <a href="#audiencia">Audiencia</a>
                 <a href="#manual">Evolución</a>
-                <a href="#mix">Mix Anual</a>
-                <a href="#propiedad">Capacidades</a>
                 <a href="#contacto" class="btn-talk">RESERVAR HAVEN</a>
             </nav>
         </header>
@@ -335,7 +302,7 @@
                 </p>
                 <div class="social-capsules">
                     <a href="#generador" class="capsule">Motor de Ideas</a>
-                    <a href="#audiencia" class="capsule">Relief &amp; Haven</a>
+                    <a href="#pinterest" class="capsule">Pinterest Visuals</a>
                 </div>
             </div>
             
@@ -354,35 +321,7 @@
             </div>
         </section>
 
-        <!-- BADGES STRIP -->
-        <div class="badges-strip">
-            <div class="badge-item">
-                <div class="badge-circle">🚟</div>
-                <div class="badge-label">Aislamiento</div>
-            </div>
-            <div class="badge-item">
-                <div class="badge-circle">🧘</div>
-                <div class="badge-label">Wellness</div>
-            </div>
-            <div class="badge-item">
-                <div class="badge-circle">🌱</div>
-                <div class="badge-label">Permacultura</div>
-            </div>
-            <div class="badge-item">
-                <div class="badge-circle">🎙️</div>
-                <div class="badge-label">Estudio Arte</div>
-            </div>
-            <div class="badge-item">
-                <div class="badge-circle">🌊</div>
-                <div class="badge-label">Vista Pacífico</div>
-            </div>
-            <div class="badge-item">
-                <div class="badge-circle">🚟</div>
-                <div class="badge-label">Haven / Relief</div>
-            </div>
-        </div>
-
-        <!-- GENERADOR DE IDEAS BASADO EN ANÁLISIS DE AUTORES Y OFERTA COMERCIAL -->
+        <!-- GENERADOR DE IDEAS TEXTUALES -->
         <section class="section-block" id="generador">
             <div class="section-header">
                 <span class="hero-tag">Herramienta de Content Creation</span>
@@ -401,164 +340,21 @@
                     <!-- Se carga dinámicamente -->
                 </div>
             </div>
-        </section>
 
-        <!-- BUYER PERSONA & AUDIENCIA -->
-        <section class="section-block" id="audiencia">
-            <div class="section-header">
-                <span class="hero-tag">01 / Definición de Audiencia &amp; Código Semántico</span>
-                <h2 class="section-title">¿A quién le hablamos y cuál es nuestro código?</h2>
-            </div>
-
-            <div class="persona-grid">
-                <div class="persona-block">
-                    <h3>Estilo de Vida del Cliente Ideal</h3>
-                    <p>Profesionales creativos, líderes de proyectos, practicantes de wellness y nómadas digitales (30 a 55 años) saturados del ritmo urbano.</p>
-                    <ul>
-                        <li>Valoran el diseño consciente, la privacidad y la autenticidad.</li>
-                        <li>Buscan espacios que estimulen su creatividad y confronten sus bloqueos.</li>
-                        <li>Entienden el viaje como una inversión en su equilibrio emocional y espiritual.</li>
-                    </ul>
-                </div>
-
-                <div class="persona-block">
-                    <h3>Código Semántico Bilingüe</h3>
-                    <p>Palabras clave que deben articular de forma constante el universo conceptual de las publicaciones y copys en redes sociales.</p>
-                    <ul>
-                        <li><b>RELIEF / ALIVIO:</b> La descompresión inmediata al dejar atrás el ruido del valle.</li>
-                        <li><b>HAVEN / REFUGIO:</b> El hogar seguro en la selva tropical donde ocurre la transformación.</li>
-                        <li><b>INICIADO:</b> El viajero que mira la vida con ojos de búsqueda, revelación y crecimiento.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- MANUAL 3 PILARES + EVOLUCIÓN INTEGRAL -->
-        <section class="section-block" id="manual">
-            <div class="section-header">
-                <span class="hero-tag">02 / Estructura del Viaje Narrativo</span>
-                <h2 class="section-title">Mente, Cuerpo y Espíritu</h2>
-            </div>
-
-            <div class="manual-grid">
-                <div class="pillar-card">
+            <!-- ZONA DE INSPIRACIÓN VISUAL (PINTEREST FEED) -->
+            <div class="pinterest-section" id="pinterest">
+                <div class="pinterest-header">
                     <div>
-                        <div class="pillar-header">
-                            <span class="pillar-num">Pilar 01</span>
-                            <h3 class="pillar-title">Mente</h3>
-                        </div>
-                        <p class="pillar-body">
-                            <b>El Detonante del Viaje.</b> La saturación mental de la ciudad exige una pausa. En la cima de la colina, la vista a 180° del Pacífico devuelve la perspectiva clara y reordena las prioridades.
-                        </p>
+                        <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--text-muted); letter-spacing:1px;">Inspiración Visual en Tiempo Real</span>
+                        <h3 style="font-size:1.3rem; font-weight:800; margin-top:0.2rem;">Pinterest: "instagram post design yoga nature retreat"</h3>
                     </div>
-                    <div>
-                        <span class="pillar-footer">Concepto: Claridad &amp; Alivio</span>
-                    </div>
+                    <button class="btn-pinterest" onclick="refreshPinterestFeed()">
+                        <span>📌 Actualizar Referencias</span>
+                    </button>
                 </div>
 
-                <div class="pillar-card">
-                    <div>
-                        <div class="pillar-header">
-                            <span class="pillar-num">Pilar 02</span>
-                            <h3 class="pillar-title">Cuerpo</h3>
-                        </div>
-                        <p class="pillar-body">
-                            <b>El Anclaje Físico.</b> El ascenso a pie de 3 a 5 minutos filtra la prisa. La bio-alberca de agua de lluvia, las prácticas en el Yoga Shala y el aire limpio restauran la energía vital.
-                        </p>
-                    </div>
-                    <div>
-                        <span class="pillar-footer">Concepto: Vitalidad &amp; Permacultura</span>
-                    </div>
-                </div>
-
-                <div class="pillar-card">
-                    <div>
-                        <div class="pillar-header">
-                            <span class="pillar-num">Pilar 03</span>
-                            <h3 class="pillar-title">Espíritu</h3>
-                        </div>
-                        <p class="pillar-body">
-                            <b>El Encuentro en el Refugio.</b> La inmersión en la selva, el arte y el estudio subterráneo sirven como canales para confrontar bloqueos y liberar la verdadera voz interior.
-                        </p>
-                    </div>
-                    <div>
-                        <span class="pillar-footer">Concepto: Haven &amp; Expresión</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="evolution-banner">
-                <div>
-                    <span style="text-transform: uppercase; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; color: #f1aa37;">Punto Cúlmine del Viaje</span>
-                    <h3>Evolución Integral del Ser</h3>
-                    <p>
-                        El huésped no deja la montaña como llegó. Al integrar Mente, Cuerpo y Espíritu en El Triángulo, desciende portando la claridad, el alivio y la fuerza descubiertas en este refugio tropical.
-                    </p>
-                </div>
-                <div style="text-align: right;">
-                    <a href="#contacto" class="evolution-btn">Iniciar el Ascenso</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ESTRATEGIA ANUAL: MIX DE CONTENIDOS (40-20-20-20) -->
-        <section class="section-block" id="mix">
-            <div class="section-header">
-                <span class="hero-tag">03 / Distribución Temática Anual</span>
-                <h2 class="section-title">Mix de Contenidos Unificantes (Mínimo 9 Posts/Mes)</h2>
-            </div>
-
-            <div class="mix-grid">
-                <div class="mix-card">
-                    <div class="mix-percentage">40%</div>
-                    <div class="mix-title">Hotel &amp; Infraestructura</div>
-                    <div class="mix-desc">Ubicación en la colina, aislamiento del ruido, vistas al Pacífico y diseño bioclimático por Raúl Fernández y Taller Lu'um.</div>
-                </div>
-                <div class="mix-card">
-                    <div class="mix-percentage">20%</div>
-                    <div class="mix-title">Retiros (Grupos)</div>
-                    <div class="mix-desc">El poder del grupo sanador. El arte y la convivencia en la Palapa como motor de un retiro que estimula la creatividad.</div>
-                </div>
-                <div class="mix-card">
-                    <div class="mix-percentage">20%</div>
-                    <div class="mix-title">Wellness &amp; Espíritu</div>
-                    <div class="mix-desc">Prácticas en el Yoga Shala, bio-alberca natural de agua de lluvia y reconexión profunda con la selva tropical.</div>
-                </div>
-                <div class="mix-card">
-                    <div class="mix-percentage">20%</div>
-                    <div class="mix-title">Música &amp; Estudio</div>
-                    <div class="mix-desc">Estudio subterráneo de grabación con instrumentos recolectados durante 30 años en 3 continentes.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DATOS TÉCNICOS Y CAPACIDADES DE LA PROPIEDAD -->
-        <section class="section-block" id="propiedad">
-            <div class="section-header">
-                <span class="hero-tag">04 / Especificaciones Técnicas del Santuario</span>
-                <h2 class="section-title">Infraestructura, Capacidad &amp; Ubicación</h2>
-            </div>
-
-            <div class="specs-grid">
-                <div class="spec-box">
-                    <div class="spec-number">20</div>
-                    <div class="spec-label">Huéspedes máximo</div>
-                    <div class="spec-detail">6 Suites Villa, 1 Casita individual y 1 Casa Principal de 2.5 habitaciones.</div>
-                </div>
-                <div class="spec-box">
-                    <div class="spec-number">35</div>
-                    <div class="spec-label">Capacidad Taller</div>
-                    <div class="spec-detail">Espacio cómodo en Palapa &amp; Tapanco para meditación, yoga y talleres.</div>
-                </div>
-                <div class="spec-box">
-                    <div class="spec-number">80</div>
-                    <div class="spec-label">Eventos &amp; Comensales</div>
-                    <div class="spec-detail">Cocina comercial adjunta lista para banquetes y retiros grupales.</div>
-                </div>
-                <div class="spec-box">
-                    <div class="spec-number">180°</div>
-                    <div class="spec-label">Vista al Pacífico</div>
-                    <div class="spec-detail">A 7 min de la Calle Principal y 15 min caminando a la playa de Mazunte.</div>
+                <div class="pinterest-frame-container">
+                    <iframe id="pinterestIframe" src="https://assets.pinterest.com/ext/embed.html?id=search&term=instagram%20post%20design%20yoga%20nature%20retreat" title="Pinterest Visual Search"></iframe>
                 </div>
             </div>
         </section>
@@ -570,11 +366,10 @@
         </footer>
     </div>
 
-    <!-- JAVASCRIPT: LÓGICA DE HERO IMAGES RANDOMICAS + GENERADOR DE IDEAS -->
+    <!-- JAVASCRIPT: LOGICA DEL GENERADOR Y REFRESH DE PINTEREST -->
     <script>
         const DEFAULT_API_KEY = "AQ.Ab8RN6KafSfCxSTuQp8xLb6xQ2Se-7c70sAobmAR0zfNxIX8eQ";
 
-        // GALERÍA DE IMÁGENES REALES DEL HOTEL PARA EL HEADER
         const hotelImages = [
             "https://i.ibb.co/b50tjYcg/Captura-de-Pantalla-2026-10-23-a-la-s-11-32-43.png",
             "https://i.ibb.co/vysNBm0/Captura-de-Pantalla-2026-10-23-a-la-s-11-34-00.png",
@@ -587,102 +382,50 @@
             heroCard.style.backgroundImage = `url('${randomImg}')`;
         }
 
-        // ANÁLISIS FILOSÓFICO REAL DE CADA AUTOR
+        // FUNCIÓN PARA ACTUALIZAR RESULTADOS DE PINTEREST
+        function refreshPinterestFeed() {
+            const iframe = document.getElementById('pinterestIframe');
+            // Agregamos un timestamp aleatorio al parámetro para forzar la recarga de nuevas referencias visuales
+            const query = encodeURIComponent("instagram post design yoga nature retreat");
+            const timestamp = new Date().getTime();
+            
+            iframe.src = `https://www.pinterest.com/search/pins/?q=${query}&rs=typed&t=${timestamp}`;
+        }
+
         const autoresAnalisis = [
             {
                 nombre: "Carlos Castaneda",
-                tesis: [
-                    "Sostener la atención en el presente requiere la interrupción deliberada de las rutinas automáticas que adormecen la percepción urbana.",
-                    "El 'intento' no es una fuerza mental abstracta, sino la alineación total de la energía personal cuando se eliminan las distracciones del ego.",
-                    "Acechar la propia conducta implica observarse en un espacio neutro para desmontar la importancia personal que agota la energía vital."
-                ]
+                tesis: ["Sostener la atención en el presente requiere la interrupción deliberada de las rutinas automáticas que adormecen la percepción urbana."]
             },
             {
                 nombre: "Robert Monroe",
-                tesis: [
-                    "El cuerpo físico es únicamente la primera capa de resonancia; cuando el entorno entra en calma profunda, la conciencia explora nuevos focos de percepción.",
-                    "La descompresión real del sistema nervioso ocurre cuando logramos una sintonía acústica y ambiental que facilita estados profundos de introspección.",
-                    "Liberar la rigidez del pensamiento consciente permite acceder a intuiciones y soluciones creativas que no emergen bajo el estrés diario."
-                ]
+                tesis: ["El cuerpo físico es únicamente la primera capa de resonancia; cuando el entorno entra en calma profunda, la conciencia explora nuevos focos de percepción."]
             },
             {
                 nombre: "Lobsang Rampa",
-                tesis: [
-                    "El vehículo físico es el templo donde se ancla el espíritu; cuidarlo con agua pura, aire limpio y silencio es la condición para el despertar del iniciado.",
-                    "El aislamiento temporal en un refugio elevado actúa como un imán que limpia el campo sutil de las densidades del entorno urbano.",
-                    "Caminar con intención y habitar espacios construidos con elementos naturales restaura la coherencia entre el cuerpo sutil y la tierra."
-                ]
+                tesis: ["El vehículo físico es el templo donde se ancla el espíritu; cuidarlo con agua pura, aire limpio y silencio es la condición para el despertar del iniciado."]
             },
             {
                 nombre: "Hugo Moreno",
-                tesis: [
-                    "La arquitectura del silencio consiste en crear volúmenes y vanos que no dominen la naturaleza, sino que encuadren la inmensidad del horizonte.",
-                    "Habitar la piedra, la tierra comprimida y la madera natural reordena la sensibilidad táctil y la percepción del espacio interior.",
-                    "El diseño no es ornamentación externa, sino la construcción de un marco físico donde la atención se vuelve contemplación pura."
-                ]
-            },
-            {
-                nombre: "Jiddu Krishnamurti",
-                tesis: [
-                    "La verdadera libertad no es una búsqueda hacia el futuro, sino la observación sin juicio de lo que es, aquí y ahora.",
-                    "Cuando cesa la comparación constante y el deseo de llegar a ser alguien, la mente se vuelve receptiva y clara.",
-                    "Estar en silencio no significa aislarse del mundo, sino mirar la naturaleza con una atención libre de la memoria del pasado."
-                ]
-            },
-            {
-                nombre: "Alan Watts",
-                tesis: [
-                    "El ser humano no está separado del universo que lo rodea; la ilusión de separación surge al confundir el pensamiento con la realidad.",
-                    "Fluir con el ritmo natural de la vida implica soltar el control forzado y permitir que las cosas se desarrollen en su propio tiempo.",
-                    "La calma no es un objetivo distante que se conquista, sino el reconocimiento de la armonía que ya existe cuando dejamos de luchar contra el presente."
-                ]
-            },
-            {
-                nombre: "G.I. Gurdjieff",
-                tesis: [
-                    "La mayoría de las acciones cotidianas son respuestas mecánicas; para despertar, es necesario cultivar el 'recuerdo de sí' en cada gesto.",
-                    "El trabajo sobre uno mismo exige salir de la zona de confort física y habitual para observar los resortes que mueven la conducta.",
-                    "Reunirse en un grupo de trabajo consciente potencia el esfuerzo individual y acelera el proceso de autoconocimiento."
-                ]
-            },
-            {
-                nombre: "Joseph Campbell",
-                tesis: [
-                    "El viaje del héroe comienza siempre con un llamado a dejar lo conocido y cruzar el umbral hacia lo inexplorado.",
-                    "Las pruebas y el aislamiento en el camino no son castigos, sino el crisol donde se disuelve la vieja identidad para dar paso al renacimiento.",
-                    "El héroe no se queda en la cima de la montaña; regresa al mundo cotidiano portando la visión clara para transformar su entorno."
-                ]
+                tesis: ["La arquitectura del silencio consiste en crear volúmenes y vanos que no dominen la naturaleza, sino que encuadren la inmensidad del horizonte."]
             }
         ];
 
         const pilares = ["Hospedaje & Oferta (40%)", "Espiritual & Retiros (20%)", "Wellness & Espíritu (20%)", "Música & Estudio (20%)"];
 
-        // AMENIDADES Y ESPACIOS COMERCIALES DE EL TRIÁNGULO
         const serviciosHotel = [
             { nombre: "las 6 Suites independientes de la Villa", cta: "Reserva una de nuestras 6 suites en la Villa para iniciar tu estancia de reconexión." },
             { nombre: "La Casita privada con cocina propia", cta: "Disfruta del aislamiento absoluto y la autonomía que brinda La Casita." },
-            { nombre: "La Casa Principal de 2.5 habitaciones", cta: "Espacio reservado para estancias prolongadas o residencias de pequeños equipos de trabajo." },
             { nombre: "el Tapanco sobre la Palapa central", cta: "Sostén tu taller o retiro de integración para 35 practicantes en nuestro Tapanco." },
             { nombre: "la Bio-alberca de agua de lluvia y piedra volcánica", cta: "Experimenta la descompresión bioclimática en la alberca natural frente al Pacífico." },
             { nombre: "el Estudio de grabación subterráneo con bambú y ladrillo", cta: "Reserva tu residencia artística o sesiones de producción en nuestro estudio con equipamiento de clase mundial." }
         ];
 
-        // RUTA DEL INICIADO EN EL TRIÁNGULO
         const aplicacionesHéroe = [
             "El ascenso a pie de 3 a 5 minutos hacia la cima de la colina funciona como el cruce del umbral, donde el bullicio del valle se queda atrás.",
             "La ubicación estratégica en la colina sobre Mazunte ofrece la distancia justa para observar el mar a 180° y reordenar la mirada.",
-            "La arquitectura bioclimática integrada a la selva oaxaqueña sirve como un filtro natural donde el cuerpo recupera su ritmo biológico.",
-            "El silencio del entorno y la inmersión en la naturaleza aceleran el proceso de introspección y renovación del espíritu.",
-            "La convivencia en la Palapa y los espacios compartidos crea la atmósfera ideal para el trabajo en grupo y la integración."
+            "La arquitectura bioclimática integrada a la selva oaxaqueña sirve como un filtro natural donde el cuerpo recupera su ritmo biológico."
         ];
-
-        async function generateIdea() {
-            if (DEFAULT_API_KEY) {
-                await generateWithGemini(DEFAULT_API_KEY);
-            } else {
-                generateLocalCombinatorialIdea();
-            }
-        }
 
         function generateLocalCombinatorialIdea() {
             const autorObj = autoresAnalisis[Math.floor(Math.random() * autoresAnalisis.length)];
@@ -701,45 +444,6 @@
             };
 
             renderOutput(result);
-        }
-
-        async function generateWithGemini(apiKey) {
-            const btnText = document.getElementById('btnText');
-            btnText.innerText = "⏳ Generando Propuesta...";
-
-            const prompt = `Actúa como Director Creativo de "El Triángulo Mazunte". Crea una propuesta de contenido de Instagram basada en el análisis de autores místicos o de pensamiento profundo (como Carlos Castaneda, Robert Monroe, Lobsang Rampa, Hugo Moreno, Krishnamurti, Alan Watts, Gurdjieff o Joseph Campbell). 
-            Analiza una tesis concreta de su obra y conéctala orgánicamente con el viaje del héroe/iniciado y la oferta comercial de El Triángulo (Villa de 6 suites, Casita, Casa Principal, Tapanco para 35 personas, Bio-alberca de agua de lluvia o Estudio subterráneo). 
-            Devuelve ÚNICAMENTE un objeto JSON válido con las claves: "pilar", "autor", "concepto", "titulo", "copy", "cta". Incluye la firma "Find your Haven. Experience true Relief." al final del copy. Evita muletillas o frases hechas.`;
-
-            try {
-                let response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent`, {
-                    method: 'POST',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'X-Goog-Api-Key': apiKey 
-                    },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
-
-                if (!response.ok) {
-                    response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                    });
-                }
-
-                if (!response.ok) throw new Error("API Key Error");
-
-                const data = await response.json();
-                const rawText = data.candidates[0].content.parts[0].text;
-                const cleanJson = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
-                renderOutput(JSON.parse(cleanJson));
-            } catch (e) {
-                generateLocalCombinatorialIdea();
-            } finally {
-                btnText.innerText = "✨ Generar Propuesta Orgánica";
-            }
         }
 
         function renderOutput(idea) {
@@ -767,6 +471,7 @@
         window.onload = function() {
             randomizeHeroImage();
             generateLocalCombinatorialIdea();
+            refreshPinterestFeed();
         };
     </script>
 </body>
